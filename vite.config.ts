@@ -13,6 +13,11 @@ dotenv.config();
 
 export default defineConfig((config) => {
   return {
+    server: {
+      host: '0.0.0.0',
+      port: 5174,
+      allowedHosts: ['bolt-diy.n8n-accaisona.site', 'bolt.n8n-accaisona.site', 'localhost', '127.0.0.1'],
+    },
     define: {
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
     },
@@ -59,6 +64,7 @@ export default defineConfig((config) => {
     ],
     envPrefix: [
       'VITE_',
+      'GOOGLE_',
       'OPENAI_LIKE_API_BASE_URL',
       'OPENAI_LIKE_API_MODELS',
       'OLLAMA_API_BASE_URL',
