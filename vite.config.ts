@@ -14,7 +14,7 @@ dotenv.config();
 export default defineConfig((config) => {
   return {
     server: {
-      host: '0.0.0.0',
+      host: process.env.HOST || '172.17.0.1',
       port: 5174,
       allowedHosts: ['bolt-diy.n8n-accaisona.site', 'bolt.n8n-accaisona.site', 'localhost', '127.0.0.1'],
     },
